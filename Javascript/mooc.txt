@@ -1,1 +1,3 @@
 Je suis en MOOC dautomation de test
+
+Ceci fichier sera partagé sur Github
