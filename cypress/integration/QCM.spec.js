@@ -1,7 +1,7 @@
 ///<reference types ="cypress"/>
 
-describe ("Suite de test kat1-cy",function(){
-    it ("Scenario 1", function(){
+describe ("Suite de test kata1-cy",function(){
+    it ("Verification d'affichage des questions et reponses", function(){
         cy.log("Premier scenario"),
         cy.visit("Javascript/projet.html"),
         cy.get('form > :nth-child(2) > u').should("be.visible"),
@@ -14,7 +14,7 @@ describe ("Suite de test kat1-cy",function(){
         cy.get('[for="maradona"]').should("be.visible"),
         cy.get('[for="zidane"]').should("be.visible")
     });
-    it("Scenario 2",function(){
+    it("Cocher les bonnes réponses et verification message de succés",function(){
         cy.log("Deuxieme Scenarion"),
         cy.get('#Rabat').check().should("be.checked"),
         cy.get('#xavi').check().should("be.checked"),
@@ -23,7 +23,7 @@ describe ("Suite de test kat1-cy",function(){
         cy.get('#choix1').should("be.visible").contains("La réponse à la première question est correcte"),
         cy.get('#choix2').should("be.visible").contains("La réponse à la deuxième question est correcte")
     });
-    it("Scenario 3",function(){
+    it("Cocher les mauvaises réponses et verification message d'erreur",function(){
         cy.log("Troisieme scenario"),
         cy.get('#Fes').click(),
         cy.get('#xavi').uncheck().should("not.be.checked"),
